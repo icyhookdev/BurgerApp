@@ -1,6 +1,6 @@
 .BuildControl {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 5px 0;
 }
@@ -18,13 +18,14 @@
 }
 
 .BuildControl button:disabled {
-  background-color: #f1d483;
+  background-color: rgb(117, 117, 117);;
   /* border: 1px solid #7E7365; */
   cursor: default;
+  color: #fff
 }
 
 .BuildControl button:hover:disabled {
-  background-color: #f1d483;
+  background-color: rgb(117, 117, 117);
   /* cursor: not-allowed; */
 }
 
@@ -36,22 +37,22 @@
 }
 
 .BuildControl .Less {  
-  background-color: #f8b500;
-  color: #333;
+  background-color: #333;
+  color: #ffd200;
   
 }
 
 .BuildControl .More {
-  background-color: #f8b500;
-  color: #333;
+  background-color: #333;
+  color: #ffd200;
 }
 
 .BuildControl .Less:hover, .BuildControl .Less:active {  
-  background-color: #f5c132;
+  background-color: rgb(117, 117, 117);
   color: #333;
 }
 
 .BuildControl .More:hover,.BuildControl .More:active {
-  background-color: #f5c132;
-  color: #333;
+  background-color: rgb(117, 117, 117);;
+  color: #fff;
 }

@@ -3,10 +3,11 @@
   box-sizing: border-box;
   display: block;
   width: 100%;
+  
 }
 
 .NavigationItem a {
-  color: #ffd200;
+  color: #ddd;
   text-decoration: none;
   width: 100%;
   box-sizing: border-box;
@@ -16,7 +17,7 @@
 .NavigationItem a:hover, 
 .NavigationItem a:active,
 .NavigationItem a.active {
-  color: blue;
+  color: #ffd200;
 }
 
 @media (min-width: 500px) {
