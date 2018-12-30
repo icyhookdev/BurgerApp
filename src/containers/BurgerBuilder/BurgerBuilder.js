@@ -16,17 +16,19 @@ const INGREDIENT_PRICES = {
 
 class BurgerBuilder extends Component {
   state = {
-    ingredients: {
-      salad: 0,
-      bacon: 0,
-      cheese: 0,
-      meat: 0
-    },
+    ingredients: [],
     totalPrice: 4,
     purchasable: false,
     purchasing: false,
     spinner: false
   };
+
+  componentDidMount() {
+    burger
+      .get('/ingredients.json')
+      .then(res => this.setState({ ingredients: res.data }));
+    console.log(this.state);
+  }
 
   updatePurchaseState(ingredients) {
     const sum = Object.keys(ingredients)
