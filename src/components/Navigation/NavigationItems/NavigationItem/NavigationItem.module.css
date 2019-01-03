@@ -3,7 +3,6 @@
   box-sizing: border-box;
   display: block;
   width: 100%;
-  
 }
 
 .NavigationItem a {
@@ -14,7 +13,7 @@
   display: block;
 }
 
-.NavigationItem a:hover, 
+.NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active {
   color: #ffd200;
@@ -28,16 +27,16 @@
     width: auto;
     align-items: center;
   }
-  
+
   .NavigationItem a {
     color: #333;
     height: 100%;
     padding: 1rem 10px;
   }
-  
-  .NavigationItem a:hover, 
-  .NavigationItem a:active,
-  .NavigationItem a.active {
+
+  a:hover,
+  a:active,
+  a.active {
     background: #333;
     color: #ffd200;
   }
