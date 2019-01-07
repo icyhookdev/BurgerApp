@@ -76,30 +76,22 @@ class BurgerBuilder extends Component {
     this.setState({ purchasing: false });
   };
 
-  onPurchasingHandler = async () => {
-    this.setState({ spinner: true });
-
-    const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice,
-      customer: {
-        name: 'Cristihan A.',
-        zipCode: '1010',
-        country: 'Venezuela',
-        email: 'cristihan...@gmail.com'
-      }
-    };
-
-    try {
-      await burger.post('/orders.json', order);
-      setTimeout(() => {
-        this.setState({ spinner: false, purchasing: false });
-      }, 3000);
-    } catch (error) {
-      setTimeout(() => {
-        this.setState({ spinner: false, purchasing: false });
-      }, 3000);
+  onLoadCheckout = () => {
+    const queryParams = [];
+    for (let i in this.state.ingredients) {
+      queryParams.push(
+        `${encodeURIComponent(i)}=${encodeURIComponent(
+          this.state.ingredients[i]
+        )}`
+      );
     }
+    queryParams.push(`price=${this.state.totalPrice}`);
+    const queryString = queryParams.join('&');
+
+    this.props.history.push({
+      pathname: '/checkout',
+      search: `?${queryString}`
+    });
   };
 
   render() {
@@ -116,7 +108,7 @@ class BurgerBuilder extends Component {
         ingredients={this.state.ingredients}
         hideModal={this.removeModalHandler}
         totalPrice={this.state.totalPrice}
-        onPurchase={this.onPurchasingHandler}
+        onPurchase={this.onLoadCheckout}
       />
     );
     if (this.state.loading) {
