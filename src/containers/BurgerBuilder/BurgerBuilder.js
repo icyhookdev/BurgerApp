@@ -27,7 +27,6 @@ class BurgerBuilder extends Component {
     burger
       .get('/ingredients.json')
       .then(res => this.setState({ ingredients: res.data }));
-    console.log(this.state);
   }
 
   updatePurchaseState(ingredients) {
